@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="pl-PL">
+
+<head>
+  <meta charset="utf-8">
+  <title> analiza dotychczasowych parametrów </title>
+  <link rel="stylesheet" type="text/css" href="slodycze.css">
+
+
+</head>
+<body>
+
+<header>
+    <h2>Analiza kosztów na słodycze</h2>
+</header>
+
+<div style="width: 90%; padding: 0 0 0 0px; margin-top: 50px;">
+<table id="q-graph" >
+<caption>pieniadze wydane danego dnia na słodycze, słodzone napoje i śmieciowe jedzenie</caption>
+<tbody>
+{% for i in range(iloscObiektyZakupuSlodyczy) %}
+
+
+<!--<th scope="row">Q{{i}}</th>-->
+<td class="sent bar" style="height: {{14*obiektyZakupuSlodyczy[i].lacznaWydanaKwota}}px;width: {{szerokoscSlupka-3}}px; left: {{ i*szerokoscSlupka + 5 }}px;"><p>{{obiektyZakupuSlodyczy[i].lacznaWydanaKwota}}zl</p></td>
+
+{% endfor %}
+</tbody>
+</table>
+
+<div id="ticks">
+<div class="tick" style="height: 42px;"><p>15 zl</p></div>
+<div class="tick" style="height: 42px;"><p>12 zl</p></div>
+<div class="tick" style="height: 42px;"><p>9 zl</p></div>
+<div class="tick" style="height: 42px;"><p>6 zl</p></div>
+<div class="tick" style="height: 42px;"><p>3 zl</p></div>
+<div class="tick" style="height: 0px;"><p>0 zl</p></div>
+</div>
+</div>
+
+
+
+
+
+
+
+<div style="width: 90%; padding: 0 0 0 0px; margin-top: 60px;">
+<table id="q-graph" style="margin-top: 258px;">
+<caption style="margin-top: -300px;">masa smieciowego jedzenia i laczna ilosc cukru w nim (+ cukier z napojów)</caption>
+<tbody>
+{% for i in range(iloscObiektyZakupuSlodyczy) %}
+
+<!--<th scope="row">Q{{i}}</th>0.84-->
+<td class="sent bar" style="height: {{0.84*obiektyZakupuSlodyczy[i].lacznaIloscCukru}}px;width: {{szerokoscSlupka-3}}px; left: {{ i*szerokoscSlupka + 5 }}px;"><p>{{obiektyZakupuSlodyczy[i].lacznaMasaJedzenia|int}}g</p></td>
+<td class="jakoscNauki bar" style="height: {{0.84*obiektyZakupuSlodyczy[i].lacznaIloscCukru}}px; top: 0px; width: {{szerokoscSlupka-3}}px; left: {{ i*szerokoscSlupka + 5 }}px;"><p class="dolPaska" style="padding-top: {{-0.84*obiektyZakupuSlodyczy[i].lacznaIloscCukru - 23}}px">{{obiektyZakupuSlodyczy[i].lacznaIloscCukru|int}}g</p></td>
+
+
+{% endfor %}
+</tbody>
+</table>
+
+<div id="ticks">
+<div class="tick" style="height: 42px;"><p>300 g</p></div>
+<div class="tick" style="height: 42px;"><p>250 g</p></div>
+<div class="tick" style="height: 42px;"><p>200 g</p></div>
+<div class="tick" style="height: 42px;"><p>150 g</p></div>
+<div class="tick" style="height: 42px;"><p>100 g</p></div>
+<div class="tick" style="height: 42px;"><p>50 g</p></div>
+<div class="tick" style="height: 42px;"><p>0 g</p></div>
+<div class="tick" style="height: 42px;"><p>50 g</p></div>
+<div class="tick" style="height: 42px;"><p>100 g</p></div>
+<div class="tick" style="height: 42px;"><p>150 g</p></div>
+<div class="tick" style="height: 42px;"><p>200 g</p></div>
+<div class="tick" style="height: 42px;"><p>250 g</p></div>
+<div class="tick" style="height: 42px;"><p>300 g</p></div>
+</div>
+</div>
+
+
+
+
+
+
+</body>
+</html>

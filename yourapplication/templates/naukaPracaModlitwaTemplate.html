@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="pl-PL">
+
+<head>
+  <meta charset="utf-8">
+  <title> analiza dotychczasowych parametrów </title>
+  <link rel="stylesheet" type="text/css" href="naukaPracaModlitwa.css">
+
+
+</head>
+<body>
+
+<header>
+    <h2\>Analiza kosztów na słodycze</h2>
+</header>
+
+<div style="width: 90%; padding: 0 0 0 0px; margin-top: 400px;">
+<table id="q-graph" style="margin-top: {{6*wysokoscDiagram + 5}}px;">
+<caption style="margin-top: -200px;">łączny czas nauki na studia i jej efektywność</caption>
+<tbody>
+{% for i in range(iloscObiektowNauki) %}
+
+
+<!--<th scope="row">Q{{i}}</th>-->
+<td class="sent bar" style="height: {{wysokoscDiagram*obiektyNaukiPracyZaangazowania[i].lacznyCzasNaukiNaStudia}}px; width: {{szerokoscSlupka-3}}px; left: {{ i*(szerokoscSlupka) + 5 }}px;"><p>{{obiektyNaukiPracyZaangazowania[i].lacznyCzasNaukiNaStudia|int}} h</p></td>
+<td class="jakoscNauki bar" style="height: {{(wysokoscDiagram/25)*obiektyNaukiPracyZaangazowania[i].srednieZaangazowanieStudia}}px; width: {{szerokoscSlupka-3}}px; top: 0px; left: {{ i*(szerokoscSlupka) + 5 }}px;"><p style="padding-top: {{(wysokoscDiagram/25)*obiektyNaukiPracyZaangazowania[i].srednieZaangazowanieStudia -23}}px">{{obiektyNaukiPracyZaangazowania[i].srednieZaangazowanieStudia|int}} %</p></td>
+
+{% endfor %}
+</tbody>
+</table>
+
+<div id="ticks">
+<div class="tick" style="height: {{wysokoscDiagram}}px;"><p></p></div>
+<div class="tick" style="height: {{wysokoscDiagram}}px;"><p>5 h</p></div>
+<div class="tick" style="height: {{wysokoscDiagram}}px;"><p>4 h</p></div>
+<div class="tick" style="height: {{wysokoscDiagram}}px;"><p>3 h</p></div>
+<div class="tick" style="height: {{wysokoscDiagram}}px;"><p>2 h</p></div>
+<div class="tick" style="height: {{wysokoscDiagram}}px;"><p>1 h</p></div>
+<div class="tick" style="height: {{wysokoscDiagram}}px;"><p>0 h</p></div>
+<div class="tick" style="height: {{wysokoscDiagram}}px;"><p>25 %</p></div>
+<div class="tick" style="height: {{wysokoscDiagram}}px;"><p>50 %</p></div>
+<div class="tick" style="height: {{wysokoscDiagram}}px;"><p>75 %</p></div>
+<div class="tick" style="height: 0px;"><p>100 %</p></div>
+</div>
+</div>
+
+
+
+
+
+<div style="width: 90%; padding: 0 0 0 0px; margin-top: 110px;">
+<table id="q-graph" style="margin-top: {{6*wysokoscDiagram + 5}}px;">
+<caption style="margin-top: -200px;">łączny czas nauki dodatkowej i jej efektywność</caption>
+<tbody>
+{% for i in range(iloscObiektowNauki) %}
+
+
+<!--<th scope="row">Q{{i}}</th>-->
+<td class="sent bar" style="height: {{wysokoscDiagram*obiektyNaukiPracyZaangazowania[i].lacznyCzasNaukiDodatkowej}}px; width: {{szerokoscSlupka-3}}px; left: {{ i*(szerokoscSlupka) + 5 }}px;"><p>{{obiektyNaukiPracyZaangazowania[i].lacznyCzasNaukiDodatkowej|int}} h</p></td>
+<td class="jakoscNauki bar" style="height: {{(wysokoscDiagram/25)*obiektyNaukiPracyZaangazowania[i].srednieZaangazowanieDodatkowa}}px; width: {{szerokoscSlupka-3}}px; top: 0px; left: {{ i*(szerokoscSlupka) + 5 }}px;"><p style="padding-top: {{(wysokoscDiagram/25)*obiektyNaukiPracyZaangazowania[i].srednieZaangazowanieDodatkowa -23}}px">{{obiektyNaukiPracyZaangazowania[i].srednieZaangazowanieDodatkowa|int}} %</p></td>
+
+{% endfor %}
+</tbody>
+</table>
+
+<div id="ticks">
+<div class="tick" style="height: {{wysokoscDiagram}}px;"><p></p></div>
+<div class="tick" style="height: {{wysokoscDiagram}}px;"><p>5 h</p></div>
+<div class="tick" style="height: {{wysokoscDiagram}}px;"><p>4 h</p></div>
+<div class="tick" style="height: {{wysokoscDiagram}}px;"><p>3 h</p></div>
+<div class="tick" style="height: {{wysokoscDiagram}}px;"><p>2 h</p></div>
+<div class="tick" style="height: {{wysokoscDiagram}}px;"><p>1 h</p></div>
+<div class="tick" style="height: {{wysokoscDiagram}}px;"><p>0 h</p></div>
+<div class="tick" style="height: {{wysokoscDiagram}}px;"><p>25 %</p></div>
+<div class="tick" style="height: {{wysokoscDiagram}}px;"><p>50 %</p></div>
+<div class="tick" style="height: {{wysokoscDiagram}}px;"><p>75 %</p></div>
+<div class="tick" style="height: 0px;"><p>100 %</p></div>
+</div>
+</div>
+
+
+<div style="width: 90%; padding: 0 0 0 0px; margin-top: 110px;">
+<table id="q-graph" style="margin-top: {{6*wysokoscDiagram + 5}}px;">
+<caption style="margin-top: -200px;">łączny czas czytania i jego efektywnosc</caption>
+<tbody>
+{% for i in range(iloscObiektowNauki) %}
+
+
+<!--<th scope="row">Q{{i}}</th>-->
+<td class="sent bar" style="height: {{wysokoscDiagram*obiektyNaukiPracyZaangazowania[i].czytanieKsiazek}}px; width: {{szerokoscSlupka-3}}px; left: {{ i*(szerokoscSlupka) + 5 }}px;"><p>{{obiektyNaukiPracyZaangazowania[i].czytanieKsiazek|int}} h</p></td>
+<td class="jakoscNauki bar" style="height: {{(wysokoscDiagram/25)*obiektyNaukiPracyZaangazowania[i].srednieZaangazowanieCzytanie}}px; width: {{szerokoscSlupka-3}}px; top: 0px; left: {{ i*(szerokoscSlupka) + 5 }}px;"><p style="padding-top: {{(wysokoscDiagram/25)*obiektyNaukiPracyZaangazowania[i].srednieZaangazowanieCzytanie -23}}px">{{obiektyNaukiPracyZaangazowania[i].srednieZaangazowanieCzytanie|int}} %</p></td>
+
+{% endfor %}
+</tbody>
+</table>
+
+<div id="ticks">
+<div class="tick" style="height: {{wysokoscDiagram}}px;"><p></p></div>
+<div class="tick" style="height: {{wysokoscDiagram}}px;"><p>5 h</p></div>
+<div class="tick" style="height: {{wysokoscDiagram}}px;"><p>4 h</p></div>
+<div class="tick" style="height: {{wysokoscDiagram}}px;"><p>3 h</p></div>
+<div class="tick" style="height: {{wysokoscDiagram}}px;"><p>2 h</p></div>
+<div class="tick" style="height: {{wysokoscDiagram}}px;"><p>1 h</p></div>
+<div class="tick" style="height: {{wysokoscDiagram}}px;"><p>0 h</p></div>
+<div class="tick" style="height: {{wysokoscDiagram}}px;"><p>25 %</p></div>
+<div class="tick" style="height: {{wysokoscDiagram}}px;"><p>50 %</p></div>
+<div class="tick" style="height: {{wysokoscDiagram}}px;"><p>75 %</p></div>
+<div class="tick" style="height: 0px;"><p>100 %</p></div>
+</div>
+</div>
+
+
+
+<!--
+pozostalo do wprowadzenia w odpowiednim czasie jeśli wogóle:
+-wartoscPozostalychZajec
+-modlitwaRano
+-modlitwaWieczorem
+-->
+
+
+
+
+
+
+
+
+

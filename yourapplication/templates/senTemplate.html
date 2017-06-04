@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="pl-PL">
+
+<head>
+  <meta charset="utf-8">
+  <title> Analiza snu </title>
+  <link rel="stylesheet" type="text/css" href="sen.css">
+
+
+</head>
+<body>
+
+<header>
+    <!--<h2 style="top: -300px;">Analiza snu</h2>-->
+</header>
+
+<div style="width: 90%; padding: 0 0 0 0px; margin-top: -200px;">
+<table id="q-graph" >
+<caption>Przedzial snu i czas zasniecia</caption>
+<tbody>
+{% for i in range(iloscObiektowSnu) %}
+
+
+<!--<th scope="row">Q{{i}}</th>-->
+<td class="sent bar" style="bottom: {{stalaWyrownaniaSlupkowSnu+(wysokoscDiagram+1)*(obiektySnu[i].senGlowny[0])}}px; height: {{(wysokoscDiagram+1)*(obiektySnu[i].senGlowny[1]-obiektySnu[i].senGlowny[0])}}px;width: {{szerokoscSlupka-3}}px; left: {{ i*szerokoscSlupka + 5 }}px;"><p>{{(obiektySnu[i].senGlowny[1]-obiektySnu[i].senGlowny[0])}} h</p></td>
+<td class="jakoscNauki bar" style="bottom: {{stalaWyrownaniaSlupkowSnu+(wysokoscDiagram+1)*(obiektySnu[i].senGlowny[0] - obiektySnu[i].ileNieMoglemZasnac)}}px; height: {{(wysokoscDiagram+1)*obiektySnu[i].ileNieMoglemZasnac}}px; width: {{szerokoscSlupka-3}}px; left: {{ i*(szerokoscSlupka) + 5 }}px;"><p></p></td>
+
+
+{% endfor %}
+</tbody>
+</table>
+
+<div id="ticks">
+<div class="tick" style="height: {{wysokoscDiagram}}px;"><p>16 h</p></div>
+<div class="tick" style="height: {{wysokoscDiagram}}px;"><p>15 h</p></div>
+<div class="tick" style="height: {{wysokoscDiagram}}px;"><p>14 h</p></div>
+<div class="tick" style="height: {{wysokoscDiagram}}px;"><p>13 h</p></div>
+<div class="tick" style="height: {{wysokoscDiagram}}px;"><p>12 h</p></div>
+<div class="tick" style="height: {{wysokoscDiagram}}px;"><p>11 h</p></div>
+<div class="tick" style="height: {{wysokoscDiagram}}px;"><p>10 h</p></div>
+<div class="tick" style="height: {{wysokoscDiagram}}px;"><p>9 h</p></div>
+<div class="tick" style="height: {{wysokoscDiagram}}px;"><p>8 h</p></div>
+<div class="tick" style="height: {{wysokoscDiagram}}px;"><p>7 h</p></div>
+<div class="tick" style="height: {{wysokoscDiagram}}px;"><p>6 h</p></div>
+<div class="tick" style="height: {{wysokoscDiagram}}px;"><p>5 h</p></div>
+<div class="tick" style="height: {{wysokoscDiagram}}px;"><p>4 h</p></div>
+<div class="tick" style="height: {{wysokoscDiagram}}px;"><p>3 h</p></div>
+<div class="tick" style="height: {{wysokoscDiagram}}px;"><p>2 h</p></div>
+<div class="tick" style="height: {{wysokoscDiagram}}px;"><p>1 h</p></div>
+<div class="tick" style="height: {{wysokoscDiagram}}px;"><p>24 h</p></div>
+<div class="tick" style="height: {{wysokoscDiagram}}px;"><p>23 h</p></div>
+<div class="tick" style="height: 0px;"><p>22 h</p></div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
